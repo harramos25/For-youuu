@@ -2421,8 +2421,8 @@ h1 {
     }
 
     .flower-screen {
-        justify-content: center !important;
-        /* Center everything prominently */
+        justify-content: flex-end !important;
+        /* Ground everything at the bottom */
         padding-bottom: 0 !important;
     }
 
@@ -2442,10 +2442,10 @@ h1 {
 
     .flowers {
         transform: scale(0.9) !important;
-        margin-top: 8rem !important;
-        /* Pushed down to avoid being too close to the top */
-        margin-bottom: 0 !important;
-        bottom: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: -100px !important;
+        /* Push down to sit on the floor */
+        bottom: 0 !important;
         position: relative !important;
     }
 
