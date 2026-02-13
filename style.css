@@ -2405,15 +2405,16 @@ h1 {
 
     .flower-joke {
         position: absolute;
-        top: 120px;
-        /* Safe clearance from back button */
+        top: 90px;
+        /* Moved up from 120px */
         width: 90%;
         text-align: center;
         z-index: 30;
     }
 
     .flower-joke h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
+        /* Reduced from 1.8rem */
         line-height: 1.2;
     }
 
@@ -2427,6 +2428,16 @@ h1 {
     .subtext {
         font-size: 1rem;
         padding: 0 1rem;
+    }
+
+    .flowers {
+        margin-bottom: -25vmin !important;
+        /* Pull lower on iPhone */
+    }
+
+    .flower {
+        bottom: 5vmin !important;
+        /* Pull lower on iPhone */
     }
 }
 
