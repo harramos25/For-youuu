@@ -2405,19 +2405,19 @@ h1 {
 
     .flower-joke {
         position: absolute;
-        top: 110px;
-        /* Restored safe gap for moon and back button */
+        top: 100px;
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 60px;
+        /* Massive horizontal padding to stay clear of back-button and moon */
         text-align: center;
         z-index: 100;
         pointer-events: none;
     }
 
     .flower-joke h1 {
-        font-size: 1.6rem !important;
-        /* Slightly larger text for impact */
+        font-size: 1.5rem !important;
         line-height: 1.2;
+        margin-bottom: 0;
     }
 
     .flower-screen {
@@ -2427,12 +2427,11 @@ h1 {
     }
 
     .moon {
-        top: 25px !important;
-        right: 20px !important;
-        /* Side-aligned, away from center text */
-        width: 45px !important;
-        height: 45px !important;
-        z-index: 5 !important;
+        top: 15px !important;
+        right: 15px !important;
+        width: 40px !important;
+        height: 40px !important;
+        z-index: 200 !important;
     }
 
     .subtext {
