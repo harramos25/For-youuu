@@ -2443,9 +2443,9 @@ h1 {
     .flowers {
         transform: scale(0.9) !important;
         margin-top: 0 !important;
-        margin-bottom: 40px !important;
-        /* Lifted up slightly from -100px */
-        /* Sitting gracefully near the bottom */
+        margin-bottom: 100px !important;
+        /* Lifted up further from 40px */
+        /* Sitting gracefully above the navigation bar */
         bottom: 0 !important;
         position: relative !important;
     }
