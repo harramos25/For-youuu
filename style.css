@@ -2442,8 +2442,8 @@ h1 {
 
     .flowers {
         transform: scale(0.9) !important;
-        /* Adjusted to 0.9 for final perfection */
-        margin-top: 3rem !important;
+        margin-top: 8rem !important;
+        /* Pushed down to avoid being too close to the top */
         margin-bottom: 0 !important;
         bottom: auto !important;
         position: relative !important;
