@@ -235,18 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
             noBtn.style.zIndex = '1000';
         };
 
-        // Standard listeners
-        noBtn.addEventListener('mouseover', moveNoBtn);
+        // Standard listeners - Switch to CLICK/TOUCH only to prevent premature movement
+        noBtn.addEventListener('click', moveNoBtn);
         noBtn.addEventListener('touchstart', (e) => {
-            // Check if it's already in its "fixed" evasive state to prevent double-firing
-            if (noBtn.style.position === 'fixed') {
-                moveNoBtn();
-                e.preventDefault();
-            } else {
-                // If it's the very first touch, let it evade
-                moveNoBtn();
-                e.preventDefault();
-            }
+            moveNoBtn();
+            e.preventDefault();
         });
 
         noBtn.addEventListener('mouseleave', () => {
