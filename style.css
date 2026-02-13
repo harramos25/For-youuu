@@ -2313,7 +2313,12 @@ h1 {
         .btn-glow {
             padding: 0.9rem 2rem;
             width: 100%;
+            min-width: 200px;
             font-size: 0.8rem;
+            position: static !important;
+            /* Ensure they stay in the flex flow initially */
+            left: auto !important;
+            top: auto !important;
         }
 
         .btn-back {

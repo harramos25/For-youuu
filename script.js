@@ -62,6 +62,10 @@ function transitionTo(screenNumber) {
         noBtn.style.left = '';
         noBtn.style.top = '';
         noBtn.style.zIndex = '';
+        noBtn.style.removeProperty('position');
+        noBtn.style.removeProperty('left');
+        noBtn.style.removeProperty('top');
+        noBtn.style.removeProperty('z-index');
     }
 
     setTimeout(() => {
