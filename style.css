@@ -2233,6 +2233,19 @@ h1 {
         font-size: 1.4rem;
     }
 
+    .screen {
+        padding-top: 80px !important;
+    }
+
+    .intro-moon {
+        top: 5% !important;
+        right: 5% !important;
+        width: 80px !important;
+        height: 80px !important;
+        z-index: 15 !important;
+        /* Bring above GIF shadow if needed */
+    }
+
     .line-text {
         font-size: 1.2rem;
         margin-bottom: 1rem;
