@@ -2407,8 +2407,8 @@ h1 {
         position: absolute;
         top: 100px;
         width: 100%;
-        padding: 0 60px;
-        /* Massive horizontal padding to stay clear of back-button and moon */
+        padding: 0 40px;
+        /* Reduced from 60px for better text flow */
         text-align: center;
         z-index: 100;
         pointer-events: none;
@@ -2441,9 +2441,9 @@ h1 {
     }
 
     .flowers {
-        transform: scale(1.5) !important;
-        /* Maximum impact scale */
-        margin-top: 4rem !important;
+        transform: scale(1.0) !important;
+        /* Reduced from 1.5 as requested */
+        margin-top: 3rem !important;
         margin-bottom: 0 !important;
         bottom: auto !important;
         position: relative !important;
