@@ -2421,9 +2421,18 @@ h1 {
     }
 
     .flower-screen {
-        justify-content: flex-end !important;
-        /* Force bottom alignment on mobile */
+        justify-content: center !important;
+        /* Center everything prominently */
         padding-bottom: 0 !important;
+    }
+
+    .moon {
+        top: 25px !important;
+        right: 20px !important;
+        /* Side-aligned, away from center text */
+        width: 45px !important;
+        height: 45px !important;
+        z-index: 5 !important;
     }
 
     .subtext {
@@ -2432,15 +2441,16 @@ h1 {
     }
 
     .flowers {
-        transform: scale(0.9) !important;
-        /* Substantially larger flowers */
-        margin-bottom: -150px !important;
-        /* Adjusted push-down for larger scale */
-        bottom: 0 !important;
+        transform: scale(1.5) !important;
+        /* Maximum impact scale */
+        margin-top: 4rem !important;
+        margin-bottom: 0 !important;
+        bottom: auto !important;
+        position: relative !important;
     }
 
     .flower {
-        bottom: 20px !important;
+        bottom: 0 !important;
     }
 }
 
