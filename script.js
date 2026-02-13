@@ -55,6 +55,15 @@ function transitionTo(screenNumber) {
 
     if (current) current.classList.remove('active');
 
+    // Reset "No" button position whenever we transition
+    const noBtn = document.getElementById('btn-no');
+    if (noBtn) {
+        noBtn.style.position = '';
+        noBtn.style.left = '';
+        noBtn.style.top = '';
+        noBtn.style.zIndex = '';
+    }
+
     setTimeout(() => {
         if (next) {
             next.classList.add('active');
@@ -209,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const happyGif = document.getElementById('gif-happy');
         const cryGif = document.getElementById('gif-cry');
 
-        noBtn.addEventListener('mouseover', () => {
+        const moveNoBtn = () => {
             // Change GIF to Cry
             if (happyGif) happyGif.classList.add('hidden');
             if (cryGif) cryGif.classList.remove('hidden');
@@ -220,6 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
             noBtn.style.left = `${x}px`;
             noBtn.style.top = `${y}px`;
             noBtn.style.zIndex = '1000';
+        };
+
+        noBtn.addEventListener('mouseover', moveNoBtn);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent accidental clicking
+            moveNoBtn();
         });
 
         noBtn.addEventListener('mouseleave', () => {

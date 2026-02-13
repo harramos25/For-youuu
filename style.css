@@ -249,24 +249,12 @@ h1 {
 }
 
 .btn-glass {
-    padding: 1.1rem 3rem;
-    border-radius: 50px;
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
-    color: #fff;
-    backdrop-filter: blur(15px);
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        inset 0 0 15px rgba(255, 255, 255, 0.05);
+    /* existing styles... */
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s ease;
+}
+
+#btn-no {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1), left 0.3s ease, top 0.3s ease;
 }
 
 .btn-glass:hover {
@@ -2310,7 +2298,9 @@ h1 {
     }
 
     .screen {
-        padding-top: 80px !important;
+        padding-top: 40px !important;
+        /* Reduced from 80px for better iPhone centering */
+        justify-content: center !important;
     }
 
     .intro-moon {
