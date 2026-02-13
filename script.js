@@ -58,14 +58,11 @@ function transitionTo(screenNumber) {
     // Reset "No" button position whenever we transition
     const noBtn = document.getElementById('btn-no');
     if (noBtn) {
-        noBtn.style.position = '';
-        noBtn.style.left = '';
-        noBtn.style.top = '';
-        noBtn.style.zIndex = '';
         noBtn.style.removeProperty('position');
         noBtn.style.removeProperty('left');
         noBtn.style.removeProperty('top');
         noBtn.style.removeProperty('z-index');
+        noBtn.style.position = ''; // Explicitly clear for flex flow
     }
 
     setTimeout(() => {
@@ -223,6 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cryGif = document.getElementById('gif-cry');
 
         const moveNoBtn = () => {
+            // Only move if we are on Screen 2 and active (added safety)
+            if (!document.getElementById('screen-2').classList.contains('active')) return;
+
             // Change GIF to Cry
             if (happyGif) happyGif.classList.add('hidden');
             if (cryGif) cryGif.classList.remove('hidden');
@@ -235,10 +235,18 @@ document.addEventListener('DOMContentLoaded', () => {
             noBtn.style.zIndex = '1000';
         };
 
+        // Standard listeners
         noBtn.addEventListener('mouseover', moveNoBtn);
         noBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Prevent accidental clicking
-            moveNoBtn();
+            // Check if it's already in its "fixed" evasive state to prevent double-firing
+            if (noBtn.style.position === 'fixed') {
+                moveNoBtn();
+                e.preventDefault();
+            } else {
+                // If it's the very first touch, let it evade
+                moveNoBtn();
+                e.preventDefault();
+            }
         });
 
         noBtn.addEventListener('mouseleave', () => {
