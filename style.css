@@ -2443,7 +2443,7 @@ h1 {
     .flowers {
         transform: scale(0.9) !important;
         margin-top: 0 !important;
-        margin-bottom: -10px !important;
+        margin-bottom: 40px !important;
         /* Lifted up slightly from -100px */
         /* Sitting gracefully near the bottom */
         bottom: 0 !important;
