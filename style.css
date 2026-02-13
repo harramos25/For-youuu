@@ -2405,8 +2405,8 @@ h1 {
 
     .flower-joke {
         position: absolute;
-        top: 80px;
-        /* Even higher */
+        top: 110px;
+        /* Restored safe gap for moon and back button */
         width: 100%;
         padding: 0 1rem;
         text-align: center;
@@ -2415,8 +2415,9 @@ h1 {
     }
 
     .flower-joke h1 {
-        font-size: 1.4rem !important;
-        line-height: 1.1;
+        font-size: 1.6rem !important;
+        /* Slightly larger text for impact */
+        line-height: 1.2;
     }
 
     .moon {
@@ -2432,14 +2433,15 @@ h1 {
     }
 
     .flowers {
-        transform: scale(0.7) !important;
-        /* Bigger flowers */
-        margin-bottom: -120px !important;
+        transform: scale(0.9) !important;
+        /* Substantially larger flowers */
+        margin-bottom: -150px !important;
+        /* Adjusted push-down for larger scale */
         bottom: 0 !important;
     }
 
     .flower {
-        bottom: 10px !important;
+        bottom: 20px !important;
     }
 }
 
