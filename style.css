@@ -292,17 +292,93 @@ h1 {
     transform: translateY(-5px) scale(1.05);
 }
 
-.btn-glow::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transform: rotate(45deg);
-    animation: shimmer 4s infinite;
-    pointer-events: none;
+/* Creative Image Buttons */
+.image-btn-group {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.btn-image-creative {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    padding: 0;
+}
+
+.image-wrapper {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    transition: transform 0.5s ease;
+}
+
+.btn-label {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    transition: all 0.4s ease;
+}
+
+/* Specific Glows */
+.pink-glow .image-wrapper {
+    box-shadow: 0 0 30px rgba(244, 114, 182, 0.2);
+}
+
+.pink-glow:hover .image-wrapper {
+    border-color: rgba(244, 114, 182, 0.5);
+    box-shadow: 0 0 50px rgba(244, 114, 182, 0.4);
+    background: rgba(244, 114, 182, 0.08);
+}
+
+.gold-glow .image-wrapper {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
+}
+
+.gold-glow:hover .image-wrapper {
+    border-color: rgba(251, 191, 36, 0.5);
+    box-shadow: 0 0 50px rgba(251, 191, 36, 0.4);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.btn-image-creative:hover {
+    transform: translateY(-10px);
+}
+
+.btn-image-creative:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.btn-image-creative:hover .btn-label {
+    color: #fff;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .btn-dim {
@@ -2267,6 +2343,21 @@ h1 {
 
     h1 {
         font-size: 2.2rem;
+    }
+
+    .image-btn-group {
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .image-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
     }
 
     .subtext {
