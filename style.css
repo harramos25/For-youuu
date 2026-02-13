@@ -306,7 +306,7 @@ h1 {
     height: 120px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
-    border-radius: 30px;
+    border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -314,14 +314,42 @@ h1 {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    overflow: hidden;
+    /* Removed overflow: hidden to allow the orbit to glow outside */
+}
+
+/* Glowing Orbit Ring */
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 45px;
+    padding: 2px;
+    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    animation: orbitRotate 4s linear infinite;
+}
+
+@keyframes orbitRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .image-wrapper img {
-    width: 75%;
+    width: 70%;
     height: auto;
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
     transition: transform 0.5s ease;
+    z-index: 2;
 }
 
 .btn-label {
@@ -2343,11 +2371,33 @@ h1 {
     .image-wrapper {
         width: 100px;
         height: 100px;
+        border-radius: 30px;
     }
 
-    .btn-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.15em;
+    .image-wrapper::before {
+        inset: -4px;
+        border-radius: 34px;
+    }
+
+    .flower-joke {
+        position: absolute;
+        top: 120px;
+        /* Safe clearance from back button */
+        width: 90%;
+        text-align: center;
+        z-index: 30;
+    }
+
+    .flower-joke h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2;
+    }
+
+    .moon {
+        top: 2rem !important;
+        right: 5% !important;
+        width: 60px !important;
+        height: 60px !important;
     }
 
     .subtext {
