@@ -2420,11 +2420,10 @@ h1 {
         line-height: 1.2;
     }
 
-    .moon {
-        top: 1rem !important;
-        right: 1rem !important;
-        width: 50px !important;
-        height: 50px !important;
+    .flower-screen {
+        justify-content: flex-end !important;
+        /* Force bottom alignment on mobile */
+        padding-bottom: 0 !important;
     }
 
     .subtext {
